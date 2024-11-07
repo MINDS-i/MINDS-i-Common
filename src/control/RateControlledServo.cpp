@@ -55,9 +55,9 @@ void RateControlledServo::writeRateControlled(int setAngle, int dps)
   }
 
   // max angle the servo can achieve without violating the degree per second constraint before the next update
-  residual_ += (dps * 1e6) / (updateTime - lastUpdate_);
-  int maxAngleDelta = residual_ / 1e6;
-  residual_ = residual_ % 1e6;
+  residual_ += (dps * 1000000) / (updateTime - lastUpdate_);
+  int maxAngleDelta = residual_ / 1000000;
+  residual_ = residual_ % 1000000;
 
   if (abs(setAngle - curAngle) > maxAngleDelta)
   {

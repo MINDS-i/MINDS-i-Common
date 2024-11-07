@@ -1,5 +1,5 @@
-#ifndef MINDSIUTILSLIBS_H
-#define MINDSIUTILSLIBS_H
+#ifndef MINDS_I_UTILS_H
+#define MINDS_I_UTILS_H
 
 /*
 Copyright 2024 MINDS-i Inc.
