@@ -14,10 +14,11 @@ Copyright 2024 MINDS-i Inc.
    limitations under the License.
 */
 
-#include "RateControlledServo.h"
+#include "MINDS-i-Common.h"
 
 #include "wiring_private.h"
 
+using namespace minds_i_common::control;
 
 RateControlledServo::RateControlledServo() :
   Servo(), lastUpdate_(0), residual_(0), initialized_(false)

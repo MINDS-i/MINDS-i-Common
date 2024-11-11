@@ -1,6 +1,3 @@
-#ifndef RATECONTOLLEDSERVO_H
-#define RATECONTOLLEDSERVO_H
-
 /*
 Copyright 2024 MINDS-i Inc.
 
@@ -17,7 +14,12 @@ Copyright 2024 MINDS-i Inc.
    limitations under the License.
 */
 
+#ifndef MINDS_I_COMMON_CONTROL_RATECONTOLLEDSERVO_H
+#define MINDS_I_COMMON_CONTROL_RATECONTOLLEDSERVO_H
+
 #include <Servo.h>
+
+namespace minds_i_common::control {
 
 class RateControlledServo : public Servo
 {
@@ -32,4 +34,6 @@ private:
   bool initialized_;
 };
 
-#endif
+} // namespace minds_i_common::control
+
+#endif // MINDS_I_COMMON_CONTROL_RATECONTOLLEDSERVO_H
