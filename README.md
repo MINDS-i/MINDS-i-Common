@@ -1,4 +1,4 @@
-# MINDS-i-Utils
+# MINDS-i-Common
 
 Arduino library to support common MINDS-i platforms and functions
 

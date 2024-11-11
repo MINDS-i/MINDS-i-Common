@@ -1,6 +1,3 @@
-#ifndef MINDS_I_UTILS_H
-#define MINDS_I_UTILS_H
-
 /*
 Copyright 2024 MINDS-i Inc.
 
@@ -17,22 +14,23 @@ Copyright 2024 MINDS-i Inc.
    limitations under the License.
 */
 
+#ifndef MINDS_I_COMMON_UTILS_IO_H
+#define MINDS_I_COMMON_UTILS_IO_H
+
+#include <util/atomic.h>
 #include "Arduino.h"
-#include "SPI.h"
-#include "Wire.h"
+#include "wiring_private.h"
 
-//#pragma GCC optimize ("Os")
+namespace minds_i_common::utils {
 
-//these macros can be turned off to save space
-#define DEBUG 1
-#if DEBUG
-    #define TEST(a) Serial.print(#a);Serial.print(": ");Serial.print(a);Serial.print("\t");
-    #define FAIL(a) {Serial.print("\nERROR:>"); Serial.println(a); return false; }
-#else
-    #define TEST(a) ;
-    #define FAIL(a) return false;
-#endif
+/** read a digital pin quicker than normal digitalRead
+     * by leaving out checks for the pin existing and its PWM mode
+     */
+inline bool fastDigitalRead(int pin){
+    return *portInputRegister(digitalPinToPort(pin))
+            & digitalPinToBitMask(pin);
+}
 
-#include "control/RateControlledServo.h"
+} // namespace minds_i_common::utils
 
-#endif
+#endif // MINDS_I_COMMON_UTILS_IO_H
