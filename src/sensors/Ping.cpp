@@ -13,7 +13,7 @@
    limitations under the License.
 */
 
-#include "MINDS-i-Common.h"
+#include "Ping.h"
 
 uint16_t minds_i_common::sensors::getPing(int pin, uint16_t maxMicros){
     pinMode(pin, OUTPUT);

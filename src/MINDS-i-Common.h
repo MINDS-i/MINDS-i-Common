@@ -22,10 +22,9 @@ Copyright 2024 MINDS-i Inc.
 #include "Wire.h"
 
 #include "comms/Radio.h"
-#include "control/RateControlledServo.h"
-// TODO: this include is statically defined as a header only file. Including this here will cause linking errors
+// TODO: control/RateControlledServo commonly conflicts with other libraries that use the same Timer
+// TODO: sensors/Encoder include is statically defined as a header only file. Including this here will cause linking errors
 // Consider removing this include or making it a normal .cpp file (and consider any perfomrance improvements/degradations)
-//#include "sensors/Encoder.h"
 #include "sensors/Ping.h"
 #include "utils/io.h"
 

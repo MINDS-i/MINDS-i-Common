@@ -14,28 +14,10 @@ Copyright 2024 MINDS-i Inc.
    limitations under the License.
 */
 
-#include <MINDS-i-Common-Rate-Controlled-Servo.h>
+#ifndef MINDS_I_COMMON_RATE_CONTROLLED_SERVO_H
+#define MINDS_I_COMMON_RATE_CONTROLLED_SERVO_H
 
-namespace minds_i_control = minds_i_common::control;
+// In a seperate file since it uses the Servo library which can commonly conflict with other libraries that use the same Timer
+//#include "control/RateControlledServo.h"
 
-#define MAX_SERVO_DEGREES_PER_SECOND 500
-
-minds_i_control::RateControlledServo servo;
-
-unsigned long ticks;
-
-void setup() {
-  ticks = 0;
-  servo.attachInitAngle(1, 0); // pin 1, initial angle 0
-}
-
-void loop() {
-  if (ticks++ % 10000 < 5000)
-  {
-    servo.writeRateControlled(45, MAX_SERVO_DEGREES_PER_SECOND);
-  } 
-  else
-  {
-    servo.writeRateControlled(135, MAX_SERVO_DEGREES_PER_SECOND);
-  }
-}
+#endif // MINDS_I_COMMON_RATE_CONTROLLED_SERVO_H

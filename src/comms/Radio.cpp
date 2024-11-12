@@ -13,7 +13,8 @@
    limitations under the License.
 */
 
-#include "MINDS-i-Common.h"
+#include "Radio.h"
+#include "utils/io.h"
 
 namespace { //limit visibility to this file
     volatile uint32_t pStart[EXTERNAL_NUM_INTERRUPTS];

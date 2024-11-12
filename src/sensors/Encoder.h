@@ -16,7 +16,6 @@
 #ifndef MINDS_I_COMMON_SENSORS_ENCODER_H
 #define MINDS_I_COMMON_SENSORS_ENCODER_H
 
-#include "MINDS-i-Common.h"
 #include "utils/io.h"
 
 class encoder{

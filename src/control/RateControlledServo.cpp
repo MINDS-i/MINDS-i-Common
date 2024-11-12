@@ -14,7 +14,7 @@ Copyright 2024 MINDS-i Inc.
    limitations under the License.
 */
 
-#include "MINDS-i-Common.h"
+#include "RateControlledServo.h"
 
 #include "wiring_private.h"
 
