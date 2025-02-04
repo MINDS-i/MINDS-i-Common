@@ -17,19 +17,16 @@ Copyright 2024 MINDS-i Inc.
 #ifndef MINDS_I_COMMON_UTILS_IO_H
 #define MINDS_I_COMMON_UTILS_IO_H
 
-#include <util/atomic.h>
 #include "Arduino.h"
 #include "wiring_private.h"
+#include <util/atomic.h>
 
 namespace minds_i_common::utils {
 
 /** read a digital pin quicker than normal digitalRead
-     * by leaving out checks for the pin existing and its PWM mode
-     */
-inline bool fastDigitalRead(int pin){
-    return *portInputRegister(digitalPinToPort(pin))
-            & digitalPinToBitMask(pin);
-}
+ * by leaving out checks for the pin existing and its PWM mode
+ */
+inline bool fastDigitalRead(int pin) { return *portInputRegister(digitalPinToPort(pin)) & digitalPinToBitMask(pin); }
 
 } // namespace minds_i_common::utils
 
