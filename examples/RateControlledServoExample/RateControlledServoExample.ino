@@ -25,17 +25,14 @@ minds_i_control::RateControlledServo servo;
 unsigned long ticks;
 
 void setup() {
-  ticks = 0;
-  servo.attachInitAngle(1, 0); // pin 1, initial angle 0
+    ticks = 0;
+    servo.attachInitAngle(1, 0); // pin 1, initial angle 0
 }
 
 void loop() {
-  if (ticks++ % 10000 < 5000)
-  {
-    servo.writeRateControlled(45, MAX_SERVO_DEGREES_PER_SECOND);
-  } 
-  else
-  {
-    servo.writeRateControlled(135, MAX_SERVO_DEGREES_PER_SECOND);
-  }
+    if (ticks++ % 10000 < 5000) {
+        servo.writeRateControlled(45, MAX_SERVO_DEGREES_PER_SECOND);
+    } else {
+        servo.writeRateControlled(135, MAX_SERVO_DEGREES_PER_SECOND);
+    }
 }

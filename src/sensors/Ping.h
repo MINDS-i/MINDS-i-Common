@@ -17,9 +17,9 @@ Copyright 2024 MINDS-i Inc.
 #ifndef MINDS_I_COMMON_SENSORS_PING_H
 #define MINDS_I_COMMON_SENSORS_PING_H
 
-#include <util/atomic.h>
 #include "Arduino.h"
 #include "wiring_private.h"
+#include <util/atomic.h>
 
 namespace minds_i_common::sensors {
 
@@ -31,8 +31,8 @@ constexpr uint16_t QTI_READING_TIMEOUT = 10000;
 /** Activate a parallax ping sensor and return the echo time in microseconds */
 uint16_t getPing(int pin, uint16_t maxMicros = PING_READING_TIMEOUT);
 /** Poll a QTI sensor, returning a unitless time based value
-  * smaller values correspond to a higher light intensity hitting the sensor
-  */
+ * smaller values correspond to a higher light intensity hitting the sensor
+ */
 uint16_t QTI(int pin, uint16_t maxLoops = QTI_READING_TIMEOUT);
 
 } // namespace minds_i_common::sensors

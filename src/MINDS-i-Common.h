@@ -24,21 +24,31 @@ Copyright 2024 MINDS-i Inc.
 #include "comms/Radio.h"
 #include "control/RateControlledServo.h"
 // TODO: this include is statically defined as a header only file. Including this here will cause linking errors
-// Consider removing this include or making it a normal .cpp file (and consider any perfomrance improvements/degradations)
+// Consider removing this include or making it a normal .cpp file (and consider any perfomrance
+// improvements/degradations)
 //#include "sensors/Encoder.h"
 #include "sensors/Ping.h"
 #include "utils/io.h"
 
 //#pragma GCC optimize ("Os")
 
-//these macros can be turned off to save space
+// these macros can be turned off to save space
 #define DEBUG 1
 #if DEBUG
-    #define TEST(a) Serial.print(#a);Serial.print(": ");Serial.print(a);Serial.print("\t");
-    #define FAIL(a) {Serial.print("\nERROR:>"); Serial.println(a); return false; }
+#define TEST(a)                                                                                                        \
+    Serial.print(#a);                                                                                                  \
+    Serial.print(": ");                                                                                                \
+    Serial.print(a);                                                                                                   \
+    Serial.print("\t");
+#define FAIL(a)                                                                                                        \
+    {                                                                                                                  \
+        Serial.print("\nERROR:>");                                                                                     \
+        Serial.println(a);                                                                                             \
+        return false;                                                                                                  \
+    }
 #else
-    #define TEST(a) ;
-    #define FAIL(a) return false;
+#define TEST(a) ;
+#define FAIL(a) return false;
 #endif
 
 #endif // MINDS_I_COMMON_H

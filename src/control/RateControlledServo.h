@@ -21,17 +21,17 @@ Copyright 2024 MINDS-i Inc.
 
 namespace minds_i_common::control {
 
-class RateControlledServo : public Servo
-{
-public:
-  RateControlledServo();
-  void attachInitAngle(int pin, int initAngle);  // attach to pin and set initial servo angle
-  void writeRateControlled(int setAngle, int dps);  // angle (degrees) and degree per second limit (dps should be >= 0 && <= 4294)
-  // todo write a method for specifying pulse width instead of angle
-private:
-  unsigned long lastUpdate_;
-  unsigned long residual_;
-  bool initialized_;
+class RateControlledServo : public Servo {
+  public:
+    RateControlledServo();
+    void attachInitAngle(int pin, int initAngle); // attach to pin and set initial servo angle
+    void writeRateControlled(int setAngle,
+                             int dps); // angle (degrees) and degree per second limit (dps should be >= 0 && <= 4294)
+                                       // todo write a method for specifying pulse width instead of angle
+  private:
+    unsigned long lastUpdate_;
+    unsigned long residual_;
+    bool initialized_;
 };
 
 } // namespace minds_i_common::control
